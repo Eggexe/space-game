@@ -18,4 +18,4 @@ pygame.display.flip()
 while not game_end:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            game_end = True
+            pygame.quit()
