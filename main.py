@@ -1,5 +1,6 @@
 import pygame
 from physics import PhysicsLibrary
+from rocket import Rocket
 
 #make crash variable to quit game if game crashes
 game_end = False
@@ -12,6 +13,7 @@ background_colour = (255, 255, 255)
 screen.fill(background_colour)
 clock = pygame.time.Clock() # sets FPS to 60, the "t" of suvat from phys obj
 phys = PhysicsLibrary(0,0,0,0,clock)
+rocket_1 = Rocket()
 # place screen mods above here
 
 pygame.display.flip()
