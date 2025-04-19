@@ -9,10 +9,14 @@ class PhysicsLibrary:
         self.drag_coefficient = 0.75 # drag
 
     def calculate_forces(self, rocket): # okay same as rocket.py's update func but for physics engine instead
+        thrust = 0
+        if rocket.thrusting:
+            print("thrusting")
+            thrust = self.get_thrust(rocket.fuel_type, rocket.fuel_oxi_ratio)
+
         weight = rocket.mass * self.gravity
-        thrust = self.get_thrust(rocket.fuel_type, rocket.fuel_oxi_ratio)
         drag = 0.5 * self.air_density * (rocket.velocity ** 2) * self.drag_coefficient
-        net_force = thrust - weight - drag
+        net_force = thrust - weight
 
         return {
             'thrust': thrust,
