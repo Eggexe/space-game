@@ -21,6 +21,9 @@ class RocketBase():
         self.image = pygame.transform.scale(self.image, (100, 150))
         self.rect = self.image.get_rect(center=(self.pos_x, self.pos_y))
 
+        self.thrusting = True
+        
+
     def update(self, dt, physics_engine): # global physics updater v2
         # hours spent on this: idk like 2.5 (way too long imo)
         forces = physics_engine.calculate_forces(self) # calls physics engine code to calculate forces
