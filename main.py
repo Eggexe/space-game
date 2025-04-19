@@ -34,6 +34,13 @@ while not game_end:
     # make screen look nice
     screen.fill(background_colour)
 
+    keys = pygame.key.get_pressed()
+
+    if key[pygame.K_SPACE]:
+        rocket_1.thrusting = True
+    else:
+        rocket_1.thrusting = True
+
     # update and draw rocket position with dt and physics lib
     rocket_1.update(dt, phys)
     rocket_1.draw(screen)
